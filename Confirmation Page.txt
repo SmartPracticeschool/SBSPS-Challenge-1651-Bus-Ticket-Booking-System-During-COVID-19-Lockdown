@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html>
+
+
+<head>
+    
+<title></title>
+    
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+</head>
+<body style="background-color: #f4f4f4; margin: 0 !important; padding: 0 !important;">
+    
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+        
+<!-- LOGO -->
+        
+<tr>
+            
+<td bgcolor="#35E105" align="center">
+                
+<table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                    
+<tr>
+                        
+<td align="center" valign="top" style="padding: 15px 20px 15px 20px;"> </td>
+                    
+</tr>
+                
+</table>
+            
+</td>
+        
+</tr>
+        
+<tr>
+            
+<td bgcolor="#35E105" align="center" style="padding: 0px 5px 0px 5px;">
+                
+<table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                    
+<tr>
+                        
+<td bgcolor="#ffffff" align="center" valign="top" style="padding: 20px 20px 20px 20px; border-radius: 5px 5px 0px 0px; color: #010400; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 40px; font-weight: 400; letter-spacing: 4px; line-height: 40px;">
+                            
+                            
+        
+<font size="7"
+          
+face="verdana"
+          
+color="green">
+            
+<strong>
+          
+CONGRATULATION BOOKING SUCCESSFUL!!!
+          
+</strong>
+          
+</font>
+          
+<br>
+        
+<img src="https://toptechbuzz.info/wp-content/uploads/2019/11/Top-Tech-Buzz-2.png" width="560" height="100" style="display: block; border: 0px;" />
+                        
+</td>
+                    
+</tr>
+                
+</table>
+            
+</td>
+        
+</tr>
+        
+<tr>
+            
+<td bgcolor="#35E105" align="center" style="padding: 0px 5px 0px 5px;">
+                
+<table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 606px;">
+                    
+<tr>
+                        
+<td bgcolor="#C8F9BA" align="left" style="padding: 10px 10px 10px 10px; color: #C8F9BA; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
+                            
+<p style="margin: 0;">
+<strong>MAINTAIN SOCIAL DISTANCE</strong></p>
+        
+<font size="4.5"
+          
+face="verdana"
+          
+color="blue"> 
+            
+*Wash Hands 
+        
+</font> <br>
+                             
+            
+<font size="4.5"
+          
+face="verdana"
+          
+color="blue"> 
+            
+*Use Mask 
+        
+</font> <br>
+                          
+            
+<font size="4.5"
+          
+face="verdana"
+          
+color="blue"> 
+            
+*Avoid Large Crowds 
+        
+</font> 
+        
+                        
+</td>
+                    
+</tr>
+                    
+               
+               
+</table>
+            
+</td>
+        
+</tr>
+        
+    
+</table>
+    
+<marquee><font size="4.5"
+          
+face="verdana"
+          
+color="green"><strong> 
+        
+HAPPY JOURNEY!!! ~~ SAFE JOURNEY!!! ~~ HAPPY JOURNEY!!!</strong>
+        
+</font>
+        
+</marquee>
+       
+
+</body>
+
+
+</html>

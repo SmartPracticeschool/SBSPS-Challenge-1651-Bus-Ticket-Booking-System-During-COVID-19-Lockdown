@@ -1,0 +1,47 @@
+<html>
+
+<head>  
+<title>  
+Bus Details  
+
+</title>  
+
+</head>  
+
+<body bgcolor="red">  
+
+<br> 
+
+<marquee width="100%" direction="left" height="30%">
+    
+<strong>BUS1 (Route): Town Busstand - LIC Building - R.J Nagar - Town Hall - Park Gate.</strong>
+</marquee>
+
+<br>
+
+<form>  
+
+<label>   
+
+Bus Selection :  
+
+</label>   
+
+<select>  
+
+<option value="Select">Select</option>  
+
+<option value="BUS 1 (10.00AM)">BUS 1 (10.00AM)</option>
+
+</select> 
+
+<br>
+<br>
+
+<a href="https://node-red-knfoh.eu-gb.mybluemix.net/ui/#!/4?socketid=-32-173hwBkFqLcUAAAW" ><input type="button" value="Submit"/></a>  
+
+</form>  
+
+</body>  
+
+</html>  

@@ -1,0 +1,913 @@
+<body onload="onLoaderFunc()">
+
+
+<div class="inputForm">
+
+<left>
+Name * <input type="text" id="Username" required><br>
+<label> Availability
+<span>*</span>
+</label>
+<input type="text" id="add1" name="add1" onkeyup="AutoCalc(this)" value ="15" disabled="disabled"/>
+<div class="agileits-right">
+                        
+<label> Number of Seats
+                            
+<span>*</span>
+                        
+</label>
+<input type="text" id="Numseats" required min="1" onkeyup="AutoCalc(this)">
+                        
+<br><label>
+            
+Balance Seats Available 
+<span>*</span></label>
+        
+<input type="text" id="total" name="total" disabled="disabled" />
+        
+</div>
+                         
+<script>
+ function AutoCalc(obj) {
+           
+var total = 0;
+
+           
+if (isNaN(obj.value)) {
+               
+alert("Please enter a number :(");
+               
+obj.value = '';
+               
+return false;
+           
+}
+           
+else {
+
+               
+var textBox = new Array();
+               
+textBox = document.getElementsByTagName('input')
+
+  
+for (i = 0; i < textBox.length; i++) {
+                   
+if (textBox[i].type == 'text') {
+                       
+var inputVal = textBox[i].value;
+                       
+if (inputVal == '')
+                           
+inputVal = 0;
+                       
+if ((textBox[i].id == 'add1')) {
+                           
+total = total + parseInt(inputVal);
+                       
+}
+                       
+if ((textBox[i].id == 'Numseats')) {
+                           
+total = total - parseInt(inputVal);
+                       
+}
+                   
+}
+               
+}
+               
+document.getElementById('total').value = total;
+           
+}
+       
+}
+    
+</script>
+<br/>
+  
+<button onclick="takeData()">Start Selecting</button>
+</left>
+</div>
+<div class="seatStructure">
+    
+    
+<ul id="seatDescription">
+    
+<li><i class="fa fa-user" aria-hidden="true" style="color: white"></i>  Available Seat</li>
+    
+<li><i class="fa fa-user" aria-hidden="true" style="color: green"></i>  Selected Seat</li>
+    
+<li><i class="fa fa-user" aria-hidden="true" style="color: red"></i>  Reserved Seat</li>
+    
+<li><i class="fa fa-user" aria-hidden="true"></i> Blocked Seat</li>
+  
+</ul>
+  
+<center>
+<table id="seatsBlock">
+ 
+<p id="notification"></p>
+ 
+<style>
+.walk{
+            
+padding-left:25px;
+       
+}
+        
+#driver {
+            
+background-color:gray;          
+            
+height: 20px;
+            
+border-radius: 50%;
+        
+}
+
+    
+</style>
+    
+      
+<tr>
+    
+               
+<td></td> <td colspan="4"></td>
+                
+<td align="right"> <div id="driver"></div> </td>
+            
+</tr>
+   
+<tr>
+                        
+<td>A</td>
+                        
+<td>
+                            
+<input type="checkbox" class="seats" value="A1">
+                        
+</td>
+                        
+<td>
+                            
+<div class="seats" value="A2"></div>
+                        
+</td>
+                        
+<td></td><td></td>
+                        
+<td>
+                        
+<div class="seats" value="A3"></div>
+                        
+</td>
+                        
+<td>
+                            
+<input type="checkbox" class="seats" value="A4">
+                        
+</td>
+                    
+</tr>
+
+                    
+<tr>
+                        
+<td>B</td>
+                        
+<td>
+                           
+<input type="checkbox" class="seats" value="B1">
+                        
+</td>
+                        
+<td>
+                            
+<div class="seats" value="B2"></div>
+                        
+</td>
+                        
+<td></td><td></td>
+                        
+<td>
+                            
+<div class="seats" value="B3"></div>
+                        
+</td>
+                        
+<td>
+                            
+<input type="checkbox" class="seats" value="B4">
+                        
+</td>
+                        
+                    
+</tr>
+
+                    
+<tr>
+                        
+<td>C</td>
+                        
+<td>
+                            
+<input type="checkbox" class="seats" value="C1">
+                        
+</td>
+                        
+<td>
+                            
+<div class="seats" value="C2"></div>
+                        
+</td>
+                        
+<td></td><td></td>
+                       
+<td>
+                            
+<div class="seats" value="C3"></div>
+                        
+</td>
+                        
+<td>
+                            
+<input type="checkbox" class="seats" value="C4">
+                        
+</td>
+                    
+</tr>
+
+                    
+<tr>
+                        
+<td>D</td>
+                        
+<td>
+                            
+<input type="checkbox" class="seats" value="D1">
+                        
+</td>
+                        
+<td>
+                            
+<div class="seats" value="D2"></div>
+                        
+</td>
+                        
+<td></td><td></td>
+                       
+<td>
+                            
+<div class="seats" value="D3"></div>
+                        
+</td>
+                        
+<td>
+                            
+<input type="checkbox" class="seats" value="D4">
+                        
+</td>
+                    
+</tr>
+
+                    
+<tr>
+                        
+<td>E</td>
+                        
+<td>
+                            
+<input type="checkbox" class="seats" value="E1">
+                        
+</td>
+                        
+<td>
+                            
+<div class="seats" value="E2"></div>
+                        
+</td>
+                        
+<td></td><td></td>
+                        
+<td>
+                            
+<div class="seats" value="E3"></div>
+                        
+</td>
+                        
+<td>
+                            
+<input type="checkbox" class="seats" value="E4">
+                        
+</td>
+                    
+</tr>
+
+
+                    
+<tr>
+                        
+<td>F</td>
+                        
+<td>
+                            
+<input type="checkbox" class="seats" value="F1">
+                        
+</td>
+                        
+<td>
+                            
+<div class="seats" value="F2"></div>
+                        
+</td>
+                        
+<td></td><td></td>
+                         
+<td>
+                            
+<div class="seats" value="F3"></div>
+                        
+</td>
+                         
+<td>
+                            
+<input type="checkbox" class="seats" value="F4">
+                        
+</td>
+                    
+</tr>
+
+                    
+<tr>
+                        
+<td>G</td>
+                        
+<td>
+                            
+<input type="checkbox" class="seats" value="G1">
+                        <
+/td>
+                        
+<td>
+                            
+<div class="seats" value="G2"></div>
+                        
+</td>
+                        
+<td></td><td></td>
+                        
+<td>
+                           
+<div class="seats" value="G3"></div>
+                        
+</td>
+                        
+<td>
+                            
+<input type="checkbox" class="seats" value="G4">
+                        
+</td>
+                    
+</tr>
+
+                    
+<tr>
+                        
+<td>H</td>
+                        
+<td>
+                            
+<input type="checkbox" class="seats" value="H1">
+                        
+</td>
+                        
+<td>
+                            
+<div class="seats" value="H2"></div>
+                        
+</td>
+                        
+<td></td><td></td>
+                        
+<td>
+                            
+<div class="seats" value="H3"></div>
+                        
+</td>
+                        
+<td>
+                            
+<div class="seating" value="H4"></div>
+                        
+</td>
+                    
+</tr>
+
+                    
+<tr>
+                        
+<td>I</td>
+                        
+<td>
+                            
+<div type="checkbox" class="seating" value="I1"></div>
+                        
+</td>
+                        
+<td>
+                            
+<div class="seats" value="I2"></div>
+                        
+</td>
+                        
+<td></td><td></td>
+                        
+<td>
+                            
+<div class="seats" value="I3"></div>
+                        
+</td>
+                        
+<td>
+                            
+<div class="seating" value="I4"></div>
+                        
+</td>
+                    
+</tr>
+
+                    
+<tr>
+                        
+<td>J</td>
+                        
+<td>
+                            
+<div class="seating" value="J1"></div>
+                        
+</td>
+                        
+<td>
+                            
+<div class="seats" value="J2"></div>
+                       
+</td>
+                    
+<td></td>
+                        
+<td>
+                            
+<div class="seats" value="J3"></div>
+                        
+</td>
+                        
+                         
+<td>
+                            
+<div class="seats" value="J4"></div>
+                        
+</td>
+                        
+<td>
+                            
+<div class="seating" value="J5"></div>
+                        
+</td>
+                    
+</tr>
+  
+  
+
+</table>
+<br/><button onclick="updateTextArea()">Confirm Selection</button>
+
+</center>
+
+</div>
+      
+
+<br/>
+
+
+<div class="displayerBoxes">
+
+<center>
+  
+<table class="Displaytable">
+  
+<tr>
+    
+<th>Name</th>
+    
+<th>Number of Seats</th>
+    <
+th>Seats</th>
+  
+</tr>
+  
+<tr>
+    
+<td><textarea id="nameDisplay"></textarea></td>
+    
+<td><textarea id="NumberDisplay"></textarea></td>
+    
+<td><textarea id="seatsDisplay"></textarea></td>
+  
+</tr>
+
+</table>
+
+</center>
+
+</div>
+
+<style>
+    
+body
+
+{
+  
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+
+}
+
+
+#Username
+
+{
+  
+border:none;
+  
+border-bottom:1px solid;
+
+}
+
+
+.screen
+
+{
+  
+width:100%;
+  
+height:20px;
+  
+background:#4388cc;
+  
+color:#fff;
+  
+line-height:20px;
+  
+font-size:15px;
+
+}
+
+
+.smallBox::before
+
+{
+  
+content:".";
+  
+width:15px;
+  
+height:15px;
+  
+float:left;
+  
+margin-left:10px;
+
+}
+
+.greenBox::before
+
+{
+  
+content:"";
+  
+background:Green;
+
+}
+
+.redBox::before
+
+{
+  
+content:"";
+ 
+background:Red;
+
+}
+
+.emptyBox::before
+
+{
+  
+content="";
+  
+box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+    
+background-color:#ccc;
+
+}
+
+
+.seats
+
+{
+    
+height: 20px;
+    
+width: 20px;
+  
+border:1px solid red;
+background:#384747;
+
+} 
+
+
+.seating 
+{
+            
+height: 20px;
+            
+width: 20px;
+           
+border: 1px solid gray;
+           
+cursor:pointer;
+           
+background-color:red;
+
+}
+
+
+.seatGap
+
+{
+  
+width:0px;
+
+}
+
+
+.seatVGap
+
+{
+  
+height:40px;
+
+}
+
+
+table
+
+{
+  
+text-align:center;
+
+}
+
+
+
+.Displaytable
+
+{
+  
+text-align:center;
+
+}
+
+.Displaytable td, 
+.Displaytable th 
+{
+    
+border: 1px solid;
+    
+text-align: left;
+
+}
+
+
+textarea
+
+{
+  
+border:none;
+  
+background:transparent;
+
+}
+
+
+
+
+input[type=checkbox] 
+{
+    
+width:0px;
+    
+margin-right:18px;
+
+}
+
+
+input[type=checkbox]:before 
+{
+    
+content: "";
+    
+width: 15px;
+    
+height: 15px;
+    
+display: inline-block;
+    
+vertical-align:middle;
+    
+text-align: center;
+    
+box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+    
+background-color:#FFFFFF;
+
+}
+
+
+input[type=checkbox]:checked:before 
+{
+    
+background-color:Green;
+    
+font-size: 15px;
+
+}
+
+</style>
+
+<script>
+    
+function onLoaderFunc()
+
+{
+  
+$(".seatStructure *")
+.prop("disabled", true);
+  
+$(".displayerBoxes *")
+.prop("disabled", true);
+
+}
+
+function takeData()
+
+{
+  
+if (( $("#Username").val().length == 0 ) || ( $("#Numseats").val().length == 0 ))
+  
+{
+  
+alert("Please Enter your Name and Number of Seats");
+  
+}
+  
+else
+  
+{
+    
+$(".inputForm *").prop("disabled", true);
+    
+$(".seatStructure *").prop("disabled", false);
+    
+document.getElementById("notification").innerHTML = "<b style='margin-bottom:0px;background:yellow;'>Please Select your Seats NOW!</b>";
+  
+}
+
+}
+
+
+
+function updateTextArea() 
+{ 
+    
+  
+if ($("input:checked").length == ($("#Numseats").val()))
+    
+{
+      
+$(".seatStructure *").prop("disabled", true);
+      
+     
+var allNameVals = [];
+     
+var allNumberVals = [];
+     
+var allSeatsVals = [];
+  
+     
+//Storing in Array
+     
+allNameVals.push($("#Username").val());
+     
+allNumberVals.push($("#Numseats").val());
+     
+$('#seatsBlock :checked').each(function() 
+{
+       
+allSeatsVals.push($(this).val());
+     
+});
+    
+     
+//Displaying 
+     
+$('#nameDisplay').val(allNameVals);
+     
+$('#NumberDisplay').val(allNumberVals);
+     
+$('#seatsDisplay').val(allSeatsVals);
+    
+}
+  
+else
+    
+{
+      
+alert("Please select " + ($("#Numseats").val()) + " seats")
+    
+}
+  
+}
+
+
+
+function myFunction() 
+{
+  
+alert($("input:checked").length);
+}
+
+
+
+/*
+function getCookie(cname) 
+{
+    
+var name = cname + "=";
+    
+var ca = document.cookie.split(';');
+    
+for(var i = 0; i < ca.length; i++) 
+{
+        
+var c = ca[i];
+        
+while (c.charAt(0) == ' ') 
+{
+            
+c = c.substring(1);
+        
+}
+        
+if (c.indexOf(name) == 0) 
+{
+            
+return c.substring(name.length, c.length);
+        
+}
+    
+}
+    
+return "";
+
+}
+*/
+
+
+
+
+$(":checkbox").click(function() 
+{
+  
+if ($("input:checked").length == ($("#Numseats").val())) 
+{
+    
+$(":checkbox").prop('disabled', true);
+    
+$(':checked').prop('disabled', false);
+  
+}
+  
+else
+    
+{
+      
+$(":checkbox").prop('disabled', false);
+    
+}
+});
+
+
+</script> 
+
+<a href="https://node-red-knfoh.eu-gb.mybluemix.net/ui/#!/5?socketid=-32-173hwBkFqLcUAAAW" ><input type="button" value="Submit"/></a>

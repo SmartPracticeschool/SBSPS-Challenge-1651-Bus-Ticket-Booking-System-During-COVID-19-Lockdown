@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+    
+<title>Title</title>
+</head>
+
+<body>
+    
+<marquee width="100%" direction="left" height="30%">
+   
+<strong>Purchase Your Tickets !!!</strong>
+
+</marquee>
+<br>
+    
+<ul>
+        
+<li>Rs.50 - Adult</li>
+        
+<li>Rs.30 - Child</li>
+        
+    
+</ul>
+
+    
+<label>Adult</label>
+<label>Quantity: </label>
+<input type="text" id="quantityAdult" value="0"> 
+    
+<br>
+     
+<label>Child</label><label>Quantity: </label><input type="text" id="quantityChild" value="0">
+
+    
+<br><br>
+    
+<button type="submit" id="submitButton">Submit</button>
+    
+<p id="totalPrice"></p>
+    
+<br>
+    
+    
+<script>
+    
+function calcTotalPrice(quantity, price) 
+{
+    
+return quantity * price;
+
+}
+
+
+function getMessage(quantity, totalPrice) 
+{
+    
+return 'You purchased ' + quantity + ' ticket(s) and your total price is Rs.' + totalPrice
+
+}
+
+
+function parseQuantity(val) 
+{
+    
+return parseInt(val, 10) || 0;
+}
+
+function sum(list) 
+{
+    
+return list.reduce(function(acc, x) 
+{
+        
+return acc + x;
+    
+}, 0)
+
+}
+
+
+(function() {
+    
+var submitBtn = document.getElementById('submitButton');
+    
+var outputPara = document.getElementById('totalPrice');
+
+    
+var config = [
+        
+[document.getElementById('quantityAdult'), 50],
+        
+[document.getElementById('quantityChild'), 30],
+    
+];
+
+    
+submitBtn.addEventListener('click', function() 
+{
+        
+var totalPrices;
+        
+var quantities = config.map(function (data) 
+{
+            
+var el = data[0];
+            
+return parseQuantity(el.value);
+        
+});
+
+        
+if ( sum(quantities) > 0 ) 
+{
+            
+totalPrices = config.map(function(data) 
+{
+                
+var el = data[0], price = data[1];
+                
+return calcTotalPrice(parseQuantity(el.value), price);
+            
+});
+
+            
+outputPara.innerHTML = getMessage( sum(quantities), sum(totalPrices) );
+        
+} 
+else 
+{
+            
+alert('Please purchase at least 1 ticket');
+        
+}
+    
+});
+
+
+}());    
+    
+</script>
+   
+<p class="lead">
+    
+<a class="btn btn-primary btn-sm" href="https://node-red-knfoh.eu-gb.mybluemix.net/ui/#!/6?socketid=BMePYyfB2IW-1_d6AAB8" role="button">Click to Confirm</a>
+  
+</p>
+
+</body>
+
+</html>
